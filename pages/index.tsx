@@ -1,4 +1,3 @@
-import Head from "next/head";
 import dao from "dao/posts";
 import styles from "styles/Home.module.css";
 import Link from "next/link";
@@ -12,9 +11,6 @@ type Post = {
 export default function Home(props: { posts: Post[] }) {
   return (
     <div>
-      <Head>
-        <title>Derek Zeng's Blog</title>
-      </Head>
       <div className={styles.container}>
         {props.posts.map((p) => {
           return <Link href={"/posts/" + slugify(p.title)}>{p.title}</Link>;
